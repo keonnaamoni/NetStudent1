@@ -8,15 +8,19 @@ namespace NetStudent1
 {
     class Program
     {
-
+        
         enum Rank
         {
-            Grasshopper,
-            Journeyman,
-            RockStar,
-            Ninja,
-            Jedi
+            Grasshopper = 1,
+            Journeyman = 2,
+            RockStar = 3,
+            Ninja = 4,
+            Jedi = 5
+            
         }
+
+        
+        
     
         static void Main(string[] args)
         {
@@ -25,15 +29,25 @@ namespace NetStudent1
             keonnaEvans.CompletedProgram = + 1;
             keonnaEvans.Helper = + 2;
             keonnaEvans.Level = null;
-
-            
             
 
-            Console.WriteLine("Did you help a student today?");
-            string line = Console.ReadLine();
+            Console.WriteLine("How many programs did you complete today?");
+            string userValue = Console.ReadLine();
+            
+            if (keonnaEvans.CompletedProgram  == 1) 
+            {
+                Console.WriteLine("You have made Grasshopper staus.");
+            }
+            
+            else if ((keonnaEvans.CompletedProgram == 1) && (keonnaEvans.Helper) >=3) 
+            {
+                Console.WriteLine("You have made Journeyman status");
+            }
+            
+            
           
            
-            Console.WriteLine(keonnaEvans.Helper + keonnaEvans.CompletedProgram);            
+            //Console.WriteLine(keonnaEvans.Helper + keonnaEvans.CompletedProgram);            
         }
         
                 
