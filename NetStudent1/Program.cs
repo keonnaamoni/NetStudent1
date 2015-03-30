@@ -18,43 +18,34 @@ namespace NetStudent1
             Jedi 
             
         }
-
-        
-        
-    
         static void Main(string[] args)
         {
             Student keonnaEvans = new Student();
-            
-            keonnaEvans.CurrentPoints = + 1;
-            keonnaEvans.HelperPoints = + 2;
-           // keonnaEvans.Level = null;
-            
+
+            keonnaEvans.CurrentPoints = +1;
+            keonnaEvans.HelperPoints = +2;
+           // keonnaEvans.TotalPoints = 0;
+
 
             Console.WriteLine("How many programs did you complete today?");
             string userValue = Console.ReadLine();
-            
-            
-            if (keonnaEvans.CurrentPoints == 1) 
-            {
-                Console.WriteLine( (Rank.Grasshopper));
-            }
-            
-            else if ((keonnaEvans.CurrentPoints > 1) && (keonnaEvans.HelperPoints) >=3) 
-            {
-                Console.WriteLine(Rank.Journeyman);
-            }
-            
-            
-          
-           
-            //Console.WriteLine(keonnaEvans.Helper + keonnaEvans.CompletedProgram);            
-        }
-    
-    }
-    
 
-    class Student
+
+            if (keonnaEvans.CurrentPoints == 1)
+            {
+                Console.WriteLine("You have made" + Rank.Grasshopper);
+
+
+            }
+            else if (keonnaEvans.CurrentPoints > 1) 
+            {
+
+                Console.WriteLine("You have made" + Rank.Journeyman);
+            }
+
+        } 
+
+    public class Student
     {
         public int CurrentPoints 
         {
@@ -68,7 +59,13 @@ namespace NetStudent1
             set { HelperPoints = 2;}
         }
     
+       // public int TotalPoints
+        //{
+          //  get { return TotalPoints; }
+            //set { TotalPoints = value; }
+        }
     } 
 
     }
-}
+//}
+
