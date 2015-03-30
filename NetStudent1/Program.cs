@@ -11,11 +11,11 @@ namespace NetStudent1
         
         enum Rank
         {
-            Grasshopper = 1,
-            Journeyman = 2,
-            RockStar = 3,
-            Ninja = 4,
-            Jedi = 5
+            Grasshopper,
+            Journeyman,
+            RockStar,
+            Ninja,
+            Jedi 
             
         }
 
@@ -26,22 +26,23 @@ namespace NetStudent1
         {
             Student keonnaEvans = new Student();
             
-            keonnaEvans.CompletedProgram = + 1;
-            keonnaEvans.Helper = + 2;
-            keonnaEvans.Level = null;
+            keonnaEvans.CurrentPoints = + 1;
+            keonnaEvans.HelperPoints = + 2;
+           // keonnaEvans.Level = null;
             
 
             Console.WriteLine("How many programs did you complete today?");
             string userValue = Console.ReadLine();
             
-            if (keonnaEvans.CompletedProgram  == 1) 
+            
+            if (keonnaEvans.CurrentPoints == 1) 
             {
-                Console.WriteLine("You have made Grasshopper staus.");
+                Console.WriteLine( (Rank.Grasshopper));
             }
             
-            else if ((keonnaEvans.CompletedProgram == 1) && (keonnaEvans.Helper) >=3) 
+            else if ((keonnaEvans.CurrentPoints > 1) && (keonnaEvans.HelperPoints) >=3) 
             {
-                Console.WriteLine("You have made Journeyman status");
+                Console.WriteLine(Rank.Journeyman);
             }
             
             
@@ -49,20 +50,25 @@ namespace NetStudent1
            
             //Console.WriteLine(keonnaEvans.Helper + keonnaEvans.CompletedProgram);            
         }
-        
-                
-
-        
     
     }
     
 
     class Student
     {
-        public int CompletedProgram { get; set; }
-        public int Helper { get; set; }
-        public string Level { get; set; }
-        
+        public int CurrentPoints 
+        {
+            get { return CurrentPoints;} 
+            set {CurrentPoints = 0;}
+        }
+
+        public int HelperPoints
+        {
+            get { return HelperPoints;}
+            set { HelperPoints = 2;}
+        }
+    
+    } 
 
     }
 }
