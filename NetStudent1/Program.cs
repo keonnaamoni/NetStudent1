@@ -28,44 +28,55 @@ namespace NetStudent1
 
 
             Console.WriteLine("How many programs did you complete today?");
-            string userValue = Console.ReadLine();
+            int userValue = int.Parse (Console.ReadLine());
 
-
-            if (keonnaEvans.CurrentPoints == 1)
+            { 
+            if (userValue  == 1 ) 
             {
-                Console.WriteLine("You have made" + Rank.Grasshopper);
+                Console.WriteLine("You have earned " + Rank.Grasshopper + "status!");
 
 
             }
-            else if (keonnaEvans.CurrentPoints > 1) 
-            {
 
-                Console.WriteLine("You have made" + Rank.Journeyman);
             }
 
+            Console.WriteLine("Did you help a student today?");
+            int userValue1 = int.Parse (Console.ReadLine());
+
+
+            if (userValue == 1 + keonnaEvans.HelperPoints) 
+            {
+
+                Console.WriteLine("You have earned " + Rank.Journeyman + "status!");
+            }
+
+            else
+            {
+                Console.WriteLine("End Program");
+            }
         } 
 
     public class Student
     {
         public int CurrentPoints 
         {
-            get { return CurrentPoints;} 
-            set {CurrentPoints = 0;}
+            get { return currentPoints; }
+            set { currentPoints = 0; }
         }
+        private int currentPoints;
 
         public int HelperPoints
         {
-            get { return HelperPoints;}
-            set { HelperPoints = 2;}
+            get { return helperPoints; }
+            set { helperPoints = 2; }
         }
+        private int helperPoints;
+
+        
     
-       // public int TotalPoints
-        //{
-          //  get { return TotalPoints; }
-            //set { TotalPoints = value; }
-        }
+       
     } 
 
     }
-//}
+}
 
