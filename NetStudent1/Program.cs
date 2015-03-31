@@ -11,45 +11,44 @@ namespace NetStudent1
         
         enum Rank
         {
-            Grasshopper,
-            Journeyman,
-            RockStar,
-            Ninja,
-            Jedi 
+            Grasshopper = 1,
+            Journeyman = 2,
+            RockStar = 3,
+            Ninja = 4,
+            Jedi = 5 
             
         }
         static void Main(string[] args)
         {
             Student keonnaEvans = new Student();
-
-            keonnaEvans.CurrentPoints = +1;
-            keonnaEvans.HelperPoints = +2;
-           // keonnaEvans.TotalPoints = 0;
-
+            
+            
+            //keonnaEvans.CurrentPoints = +1;
+            //keonnaEvans.HelperPoints = +2;
+           
 
             Console.WriteLine("How many programs did you complete today?");
             int userValue = int.Parse (Console.ReadLine());
-
+            
             { 
-            if (userValue  == 1 ) 
+            if (userValue  == 1) 
             {
-                Console.WriteLine("You have earned " + Rank.Grasshopper + "status!");
-
-
+                Console.WriteLine("You have earned " + Rank.Grasshopper + " status!");
             }
 
             }
 
-            Console.WriteLine("Did you help a student today?");
-            int userValue1 = int.Parse (Console.ReadLine());
+            Console.WriteLine("How many of your peers did you help?");
+            int userValue1 = int.Parse(Console.ReadLine());
 
-
-            if (userValue == 1 + keonnaEvans.HelperPoints) 
+       
+            if (userValue1 == 1) 
             {
 
-                Console.WriteLine("You have earned " + Rank.Journeyman + "status!");
+               Console.WriteLine((keonnaEvans.HelperPoints));
+                Console.WriteLine ("You have earned " + Rank.Journeyman + " status!");
             }
-
+       
             else
             {
                 Console.WriteLine("End Program");
@@ -61,7 +60,7 @@ namespace NetStudent1
         public int CurrentPoints 
         {
             get { return currentPoints; }
-            set { currentPoints = 0; }
+            set { currentPoints = 1; }
         }
         private int currentPoints;
 
@@ -71,6 +70,8 @@ namespace NetStudent1
             set { helperPoints = 2; }
         }
         private int helperPoints;
+
+        
 
         
     
