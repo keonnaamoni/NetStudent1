@@ -8,76 +8,82 @@ namespace NetStudent1
 {
     class Program
     {
-        
-        enum Rank
+        public class Student
         {
-            Grasshopper = 1,
-            Journeyman = 2,
-            RockStar = 3,
-            Ninja = 4,
-            Jedi = 5 
-            
-        }
-        static void Main(string[] args)
+            public int ProgramPoints
+            {
+                get { return programPoints; }
+                set { programPoints = +1; }
+            }
+            private int programPoints;
+
+            public int HelperPoints
+            {
+                get { return helperPoints; }
+                set { helperPoints = +2; }
+            }
+            private int helperPoints;
+
+            public int TotalPoints
+            {
+                get { return totalPoints; }
+                set {int tp = programPoints + helperPoints; }
+            }
+
+            private int totalPoints;
+
+           
+            enum Rank
+            {
+                None,
+                Grasshopper,
+                Journeyman,
+                RockStar,
+                Ninja,
+                Jedi
+
+            }
+
+             
+            static void Main(string[] args)
         {
             Student keonnaEvans = new Student();
-            
-            
-            //keonnaEvans.CurrentPoints = +1;
-            //keonnaEvans.HelperPoints = +2;
            
-
+                       
             Console.WriteLine("How many programs did you complete today?");
-            int userValue = int.Parse (Console.ReadLine());
-            
-            { 
-            if (userValue  == 1) 
+            string userValue =  Console.ReadLine();
+            Int32.Parse(userValue);
+
+
+
+
+            if (Int32.Parse(userValue) <= 1)
             {
+
                 Console.WriteLine("You have earned " + Rank.Grasshopper + " status!");
             }
 
-            }
+            
 
             Console.WriteLine("How many of your peers did you help?");
             int userValue1 = int.Parse(Console.ReadLine());
+            int i = 0;
+            
 
-       
-            if (userValue1 == 1) 
+            if (userValue1 <= 1) 
             {
-
-               Console.WriteLine((keonnaEvans.HelperPoints));
-                Console.WriteLine ("You have earned " + Rank.Journeyman + " status!");
+                i += 2;
+               Console.WriteLine(i);
+               Console.WriteLine("You've reached" + Rank.Journeyman + "status."); 
             }
-       
-            else
-            {
-                Console.WriteLine("End Program");
-            }
+           
+            
+            
+           
         } 
 
-    public class Student
-    {
-        public int CurrentPoints 
-        {
-            get { return currentPoints; }
-            set { currentPoints = 1; }
-        }
-        private int currentPoints;
-
-        public int HelperPoints
-        {
-            get { return helperPoints; }
-            set { helperPoints = 2; }
-        }
-        private int helperPoints;
-
-        
-
-        
-    
-       
-    } 
-
     }
-}
+
+        }
+    }
 
