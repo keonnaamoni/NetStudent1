@@ -57,24 +57,33 @@ namespace NetStudent1
 
 
 
-            if (Int32.Parse(userValue) <= 1)
+            if (Int32.Parse(userValue) == 1)
             {
 
                 Console.WriteLine("You have earned " + Rank.Grasshopper + " status!");
             }
 
-            
+            else if (Int32.Parse(userValue) >= 2)
+            {
+                Console.WriteLine("You have earned" + Rank.Journeyman + "status!");
+            }
 
             Console.WriteLine("How many of your peers did you help?");
             int userValue1 = int.Parse(Console.ReadLine());
             int i = 0;
             
 
-            if (userValue1 <= 1) 
+            if (userValue1 == 1) 
             {
-                i += 2;
+               i += 2;
                Console.WriteLine(i);
                Console.WriteLine("You've reached" + Rank.Journeyman + "status."); 
+            }
+            else if ( userValue1 ==2)
+            {
+                i++;
+                Console.WriteLine(i+2);
+                Console.WriteLine("You've reached" + Rank.RockStar + "status.");
             }
            
             
@@ -84,6 +93,6 @@ namespace NetStudent1
 
     }
 
-        }
+    }
     }
 
